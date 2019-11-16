@@ -176,13 +176,13 @@
     $.getJSON("../data/data.json", function(seasons) {
         console.log(seasons);
         $.each(seasons, function (index, season) {
-            console.log(season)
+            console.log(index)
             $(".scrolling-wrapper").append(
                 '<div class="card">' +
                     '<a href="?s=' + (index + 1) + '">' +
-                        '<img class="img-fluid" src="' + season['album_url'] + '" style="border-radius:.4rem!important;" alt="">' +
-                        '<div style="font-size: .9em; font-weight: lighter;">' + season['title'] + '</div>' +
-                        '<div style="font-size: .8em; font-weight: lighter; color: grey;">' + season['release_year'] + '</div>' +
+                        '<img class="img-fluid" src="' + index['album_url'] + '" style="border-radius:.4rem!important;" alt="">' +
+                        '<div style="font-size: .9em; font-weight: lighter;">' + index['title'] + '</div>' +
+                        '<div style="font-size: .8em; font-weight: lighter; color: grey;">' + index['release_year'] + '</div>' +
                     '</a>' +
                 '</div>'
             );
@@ -190,18 +190,18 @@
 
         let searchParams = new URLSearchParams(window.location.search)
         let season = searchParams.get('s')
-        console.log(season)
-        if (!season) {
-            season = 1;
+        console.log(index)
+        if (!index) {
+            index = 1;
         }
 
-        season = seasons[season-1];
-        $("#season-album").attr("src", season['album_url']);
-        $('#season-title').html("The Office, " + season['title']);
-        $('#season-desc-p').html(season['description']);
-        $('#season-release-year').html(season['release_year']);
+        index = seasons[index-1];
+        $("#season-album").attr("src", index['album_url']);
+        $('#season-title').html("The Office, " + index['title']);
+        $('#season-desc-p').html(index['description']);
+        $('#season-release-year').html(index['release_year']);
 
-        let episodes = season['episodes']
+        let episodes = index['episodes']
         $.each(episodes, function (index, episode) {
             console.log(episode)
             $(".episodes").append(
