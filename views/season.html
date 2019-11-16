@@ -72,12 +72,12 @@
 
     .scrolling-wrapper-flexbox .card {
         flex: 0 0 auto;
-        margin-right: 3px;
     }
 
     .card {
         width: 100px;
         height: 100px;
+        margin-right: 5px !important;
     }
 
     .scrolling-wrapper,
@@ -93,112 +93,22 @@
         <div class="navbar-collapse">
             <a class="navbar-brand" href="#">The Office 办公室</a>
             <a class="n-link" href="#" tabindex="-1" aria-disabled="true">关于中国站</a>
+            <a class="n-link" href="#" tabindex="-1" aria-disabled="true" style="margin-left: 1rem;">捐助</a>
         </div>
     </nav>
     <!-- Content here -->
     <div class="content">
         <div class="scrolling-wrapper">
-            <div class="card">
-                <img class="img-fluid"
-                     src="https://is3-ssl.mzstatic.com/image/thumb/Video1/v4/cd/2d/23/cd2d23b4-c236-f94d-4a4f-d90030866d6f/mzl.vytmeykc.lsr/268x0w.png"
-                     style="border-radius:.4rem!important;" alt="">
-
-                <div style="font-size: .9em; font-weight: lighter;">
-                    Season 1
-                </div>
-
-                <div style="font-size: .8em; font-weight: lighter; color: grey;">
-                    2005
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-fluid"
-                     src="https://is3-ssl.mzstatic.com/image/thumb/Video49/v4/a0/73/59/a073590d-88a3-cef3-9a1f-e0543ecce6dc/mzl.jdefuyqp.lsr/320x0w.png"
-                     style="border-radius:.4rem!important;" alt="">
-
-                <div style="font-size: .9em; font-weight: lighter;">
-                    Season 2
-                </div>
-
-                <div style="font-size: .8em; font-weight: lighter; color: grey;">
-                    2005
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-fluid"
-                     src="https://is3-ssl.mzstatic.com/image/thumb/Video/v4/ea/54/1f/ea541f1d-c2fc-a483-9cee-c94f55616038/mzl.sudwqmsk.lsr/320x0w.png"
-                     style="border-radius:.4rem!important;" alt="">
-
-                <div style="font-size: .9em; font-weight: lighter;">
-                    Season 3
-                </div>
-
-                <div style="font-size: .8em; font-weight: lighter; color: grey;">
-                    2006
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-fluid"
-                     src="https://is3-ssl.mzstatic.com/image/thumb/Video1/v4/64/48/04/6448041d-77ee-17ed-0110-66fdfdeeb2ba/mzl.mqcknfff.lsr/320x0w.png"
-                     style="border-radius:.4rem!important;" alt="">
-
-                <div style="font-size: .9em; font-weight: lighter;">
-                    Season 4
-                </div>
-
-                <div style="font-size: .8em; font-weight: lighter; color: grey;">
-                    2007
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-fluid"
-                     src="https://is5-ssl.mzstatic.com/image/thumb/Video/v4/de/66/8b/de668bb5-5d51-6ea4-f739-2be0eb8cd327/mzl.qalueyvm.lsr/320x0w.png"
-                     style="border-radius:.4rem!important;" alt="">
-
-                <div style="font-size: .9em; font-weight: lighter;">
-                    Season 5
-                </div>
-
-                <div style="font-size: .8em; font-weight: lighter; color: grey;">
-                    2008
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-fluid"
-                     src="https://is4-ssl.mzstatic.com/image/thumb/Video6/v4/10/ff/5c/10ff5c35-c285-6c05-ac6c-a0c1f261d8ee/mzl.lstznuxd.lsr/320x0w.png"
-                     style="border-radius:.4rem!important;" alt="">
-
-                <div style="font-size: .9em; font-weight: lighter;">
-                    Season 6
-                </div>
-
-                <div style="font-size: .8em; font-weight: lighter; color: grey;">
-                    2009
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-fluid"
-                     src="https://is2-ssl.mzstatic.com/image/thumb/Video4/v4/4d/0b/b6/4d0bb60f-c967-9684-1e06-42a1b86792d1/mzl.jfoqniob.lsr/320x0w.png"
-                     style="border-radius:.4rem!important;" alt="">
-
-                <div style="font-size: .9em; font-weight: lighter;">
-                    Season 7
-                </div>
-
-                <div style="font-size: .8em; font-weight: lighter; color: grey;">
-                    2010
-                </div>
-            </div>
         </div>
         <div style="margin: 1rem 0; border-bottom: 1px solid lightgray;"></div>
         <div class="row">
             <div class="col">
-                <img class="we-artwork__image ember215 product-artwork"
-                     src="https://is3-ssl.mzstatic.com/image/thumb/Video1/v4/cd/2d/23/cd2d23b4-c236-f94d-4a4f-d90030866d6f/mzl.vytmeykc.lsr/268x0w.png"
+                <img id="season-album" class="product-artwork"
+                     src=""
                      style="border-radius:.5rem!important;" alt="">
             </div>
             <div class="col-7" style="padding-left: 0;">
-                <h5 class="product-header__title show-header__title">The Office, Season 1</h5>
+                <h5 id="season-title" class=""></h5>
                 <div>
                     <div class="d-inline">
                         <svg style="vertical-align: baseline;" viewBox="0 0 39 15" height="15"
@@ -232,84 +142,26 @@
                         </span>
                     </div>
                     <div class="d-inline">
-                        <span>
-                            2005
-                        </span>
+                        <span id="season-release-year"></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="season-desc">
-            <div class="l-column small-12 product-header show-header show-header--itunes">
-                <div class="product-hero-desc product-hero-desc--small show-header__description">
-                    <div class="product-hero-desc__section">
-                        <h6 class="section__subheadline">Description</h6>
-                        <div class="season-desc-details we-truncate we-truncate--multi-line we-truncate--interactive we-truncate--full ember-view">
-                            <p dir="ltr" data-test-bidi="">Steve Carell (<i>The 40-Year-Old Virgin</i>) stars in this
-                                sitcom based on Ricky Gervais and Stephen Merchant's award-winning comedy. Told through
-                                the lenses of a documentary film crew, <i>The Office</i> exposes the humorous and often
-                                foolish events at Dunder-Mifflin Paper Company in Scranton, Pennsylvania. </p>
-                            <!--<br>-->
-                            <p dir="ltr" data-test-bidi="">In this first season, Dunder-Mifflin Regional Manager,
-                                Michael Scott (Carell) leads the documentary team and his staff on a journey through
-                                inappropriate behavior, well-intentioned but misguided comments and a myriad of poor
-                                management techniques. Michael has no clue that his employees can barely tolerate him.
-                                In his mind, he is their guru, their mentor, and their cool friend. His staff includes
-                                his dedicated-to-the-point-of-annoying assistant, Dwight Schrute, office receptionist
-                                Pam, and likable sales rep Jim. During the six episodes of Season 1, Dunder-Mifflin
-                                tackles tough subjects including company layoffs, diversity initiatives, health care,
-                                and office alliances. Anyone who has ever worked in a "team" environment can appreciate
-                                the humor and suffering of the Dunder-Mifflin staff and <i>The Office</i>.</p>
-                            <!--<br>-->
-                            <!--<br>-->
-                        </div>
-                    </div>
-                </div>
+            <h6 class="">Description</h6>
+            <div class="">
+                <p id="season-desc-p" class="season-desc-details"></p>
             </div>
         </div>
         <div class="episodes">
             <div class="episode-block" style="padding: 0!important;"></div>
-            <div class="episode-block">
-                <div class="row">
-                    <div class="col">
-                        <img class="img-fluid"
-                             src="https://is5-ssl.mzstatic.com/image/thumb/Video118/v4/7d/7c/aa/7d7caa90-7079-711d-64a3-13b109e51428/Joba4dabe54-ad56-4973-922a-286c24531807-101486530-PreviewImage_preview_image_200000_video_sdr-Time1542303509028.png/196x111mv.jpg"
-                             style="border-radius:.4rem!important; width: 100%"
-                             alt="">
-                    </div>
-                    <div class="col-7" style="padding-left: 0;">
-                        <h6 style="font-size: .7em; color: grey">
-                            EPISODE 1
-                        </h6>
-                        <h6 style="font-size: .9em;">
-                            The Office: An American Workplace (Pilot)
-                        </h6>
-                    </div>
-                </div>
-                <div style="margin-top: .4rem; font-size: .8em; color: #8e8e93; height: 60px; overflow: hidden;
-white-space: normal;
-text-overflow: ellipsis; font-weight: lighter;">
-                <span>
-                    When a documentary crew comes to the offices of Dunder Mifflin to observe the employees and
-                                    learn about modern management, manager Michael Scott (Steve Carell) tries to paint a
-                                    happy picture of his domain, but his jokes keep falling flat. Then, worse, his
-                                    supervisor from the corporate office tells him that his branch may be downsized.
-                                    Making a characteristically bad leadership decision, Michael decides not to tell his
-                                    staff, but the information quickly leaks. Meanwhile sales rep Jim (John Krasinski)
-                                    spars with his irritating nemesis Dwight (Rainn Wilson), and flirts with office
-                                    receptionist Pam (Jenna Fischer), until they are all forced to consider what their
-                                    options are if there is downsizing. B.J. Novak also stars.
-                </span>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -318,4 +170,59 @@ text-overflow: ellipsis; font-weight: lighter;">
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
+<script>
+    $.getJSON("../data/data.json", function(seasons) {
+        console.log(seasons);
+        $.each(seasons, function (index, season) {
+            console.log(season)
+            $(".scrolling-wrapper").append(
+                '<div class="card">' +
+                    '<a href="?s=' + (index + 1) + '">' +
+                        '<img class="img-fluid" src="' + season['album_url'] + '" style="border-radius:.4rem!important;" alt="">' +
+                        '<div style="font-size: .9em; font-weight: lighter;">' + season['title'] + '</div>' +
+                        '<div style="font-size: .8em; font-weight: lighter; color: grey;">' + season['release_year'] + '</div>' +
+                    '</a>' +
+                '</div>'
+            );
+        });
+
+        let searchParams = new URLSearchParams(window.location.search)
+        let season = searchParams.get('s')
+        console.log(season)
+        if (!season) {
+            season = 1;
+        }
+
+        season = seasons[season-1];
+        $("#season-album").attr("src", season['album_url']);
+        $('#season-title').html("The Office, " + season['title']);
+        $('#season-desc-p').html(season['description']);
+        $('#season-release-year').html(season['release_year']);
+
+        let episodes = season['episodes']
+        $.each(episodes, function (index, episode) {
+            console.log(episode)
+            $(".episodes").append(
+                '<div class="episode-block">\n' +
+                '                <div class="row">\n' +
+                '                    <div class="col">\n' +
+                '                        <img class="img-fluid"\n' +
+                '                             src="' + episode['album_url'] + '"\n' +
+                '                             style="border-radius:.4rem!important; width: 100%" alt="">\n' +
+                '                    </div>\n' +
+                '                    <div class="col-7" style="padding-left: 0;">\n' +
+                '                        <h6 style="font-size: .7em; color: grey">EPISODE ' + episode['number'] + '</h6>\n' +
+                '                        <h6 style="font-size: .9em;">' + episode['title'] +'</h6>\n' +
+                '                        <h6 style="font-size: .9em;">' + episode['title_cn'] +'</h6>\n' +
+                '                        <h6 style="font-size: .7em; color: grey; font-weight: lighter;">' + episode['release_date'] + ' · ' + episode['duration'] + ' Minutes </h6>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '                <div style="margin-top: .4rem; font-size: .8em; color: #8e8e93; height: 60px; overflow: hidden; white-space: normal; text-overflow: ellipsis; font-weight: lighter;">\n' +
+                '                    <span>' + episode['description'] + '</span>\n' +
+                '                </div>\n' +
+                '            </div>'
+            );
+        })
+    });
+</script>
 </html>
