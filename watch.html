@@ -6,17 +6,62 @@
     <meta name="viewport"
           content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
     <title>Vod</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="美剧《办公室》中国站">
+    <meta name="keywords" content="The Office,办公室,美剧办公室,办公室美剧">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css"/>
     <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
 </head>
 <body>
 <div class="prism-player" id="J_prismPlayer"></div>
-<script> var player = new Aliplayer({
-    id: "J_prismPlayer",
-    autoplay: true,
-    width: "480px",
-    height: "270px",
-    source : 'http://v.mystory.cc/66bdcad22d39469b9ece6a98a9f8aba4/abc9d97598664232bf4426f6fc19800f-826dfbdf9eb824fe03be7a52b2ac26a4-fd.m3u8',
-    cover: ''
-}); </script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+<script>
+    let window_width = $(window).width();
+    console.log(window_width)
+
+    let searchParams = new URLSearchParams(window.location.search)
+    let season = searchParams.get('s')
+    console.log('s' + season)
+    if (!season) {
+        season = 1;
+    }
+    let episode = searchParams.get('e')
+    console.log('e' + episode)
+    if (!episode) {
+        episode = 1;
+    }
+
+    $.getJSON("data/data.json", function(seasons) {
+        console.log(seasons);
+        episode = seasons[season-1]['episodes'][episode-1]
+
+        console.log(episode)
+        console.log(episode['source'])
+        var player = new Aliplayer({
+            id: "J_prismPlayer",
+            autoplay: false,
+            width: window_width + "px",
+            height: Math.round(window_width/16*9) + "px",
+            source: episode['source'],
+            cover: ''
+        });
+    });
+</script>
+</html>

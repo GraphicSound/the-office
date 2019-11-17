@@ -14,6 +14,11 @@
     <title>The Office 办公室 中国站</title>
 </head>
 <style>
+    a, a:hover, a:visited, a:active {
+        color:inherit;
+        text-decoration: none;
+    }
+
     .root {
         max-width: 40rem;
         padding: 0;
@@ -189,13 +194,13 @@
         });
 
         let searchParams = new URLSearchParams(window.location.search)
-        let season = searchParams.get('s')
-        console.log(season)
-        if (!season) {
-            season = 1;
+        let season_no = searchParams.get('s')
+        console.log(season_no)
+        if (!season_no) {
+            season_no = 1;
         }
 
-        season = seasons[season-1];
+        season = seasons[season_no-1];
         $("#season-album").attr("src", season['album_url']);
         $('#season-title').html("The Office, " + season['title']);
         $('#season-desc-p').html(season['description']);
@@ -206,6 +211,7 @@
             console.log(episode)
             $(".episodes").append(
                 '<div class="episode-block">\n' +
+                    '<a href="watch?s=' + season_no + '&e=' + (index+1) + '">' +
                 '                <div class="row">\n' +
                 '                    <div class="col">\n' +
                 '                        <img class="img-fluid"\n' +
@@ -222,6 +228,7 @@
                 '                <div style="margin-top: .4rem; font-size: .8em; color: #8e8e93; height: 60px; overflow: hidden; white-space: normal; text-overflow: ellipsis; font-weight: lighter;">\n' +
                 '                    <span>' + episode['description'] + '</span>\n' +
                 '                </div>\n' +
+                    '</a>' +
                 '            </div>'
             );
         })
