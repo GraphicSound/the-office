@@ -5,12 +5,12 @@
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport"
           content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-    <title>Vod</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="description" content="美剧《办公室》中国站">
     <meta name="keywords" content="The Office,办公室,美剧办公室,办公室美剧">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>The Office 办公室 中国站</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,8 +18,34 @@
     <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css"/>
     <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
 </head>
+<style>
+    .root {
+        max-width: 40rem;
+        padding: 0;
+    }
+
+    .season-desc {
+    }
+
+    .season-desc-details {
+        color: #555555;
+        font-size: 0.8em;
+    }
+</style>
 <body>
-<div class="prism-player" id="J_prismPlayer"></div>
+<div class="container root">
+    <div class="prism-player" id="J_prismPlayer"></div>
+
+    <div class="content" style="padding: 1rem;">
+        <h6 id="episode-no" style="font-size: .7em; color: grey"></h6>
+        <h6 id="episode-title" style="font-size: 1em;"></h6>
+        <div class="season-desc">
+            <div class="">
+                <p id="season-desc-p" class="season-desc-details"></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -33,7 +59,7 @@
         crossorigin="anonymous"></script>
 </body>
 <script>
-    let window_width = $(window).width();
+    let window_width = $('.root').width();
     console.log(window_width)
 
     let searchParams = new URLSearchParams(window.location.search)
@@ -54,6 +80,11 @@
 
         console.log(episode)
         console.log(episode['source'])
+
+        $('#episode-no').html('Season ' + season + ' Episode ' + episode['number']);
+        $('#episode-title').html(episode['title']);
+        $('#season-desc-p').html(episode['description']);
+
         var player = new Aliplayer({
             id: "J_prismPlayer",
             autoplay: false,
