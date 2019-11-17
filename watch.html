@@ -19,6 +19,12 @@
     <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
 </head>
 <style>
+    a, a:hover, a:visited, a:active {
+        cursor: pointer;
+        color:inherit;
+        text-decoration: none;
+    }
+    
     .root {
         max-width: 40rem;
         padding: 0;
@@ -34,6 +40,14 @@
 </style>
 <body>
 <div class="container root">
+    <nav class="navbar sticky-top navbar-light bg-light">
+        <div class="navbar-collapse">
+            <a class="navbar-brand" href="#">The Office 办公室</a>
+            <a class="n-link" href="#" tabindex="-1" aria-disabled="true">关于中国站</a>
+            <a class="n-link" href="#" tabindex="-1" aria-disabled="true" style="margin-left: 1rem;">捐助</a>
+        </div>
+    </nav>
+
     <div class="prism-player" id="J_prismPlayer"></div>
 
     <div class="content" style="padding: 1rem;">
